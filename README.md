@@ -10,7 +10,7 @@
 
   <p align="center">
     <br />
-    <a href="https://github.com/IchsanR/peworld-backend"><strong>Explore Backend docs »</strong></a>
+    <a href="https://github.com/IchsanR/mamarecipe-backend"><strong>Explore Backend docs »</strong></a>
     <br />
   </p>
 </p>
@@ -77,7 +77,7 @@ This is an example of how to list things you need to use the software and how to
 - Clone the repository
 
 ```
-git clone https://github.com/IchsanR/peworld-frontend.git
+git clone https://github.com/IchsanR/mamarecipe-frontend.git
 ```
 
 - Go to repository folder
@@ -94,8 +94,7 @@ npm install / npm i
 
 - Connect with database
 - <a href="#setup-env-example">Setup .env</a>
-- Type ` npm run dev` To Start Development
-- Type ` npm run start` To Start Production
+- Type ` npm start` To Start Development
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -132,7 +131,7 @@ Contributions are what make the open source community such an amazing place to b
 
 ## Related Project
 
-:rocket: [`Mamarecipe (Backend)`](https://github.com/IchsanR/peworld-backend)
+:rocket: [`Mamarecipe (Backend)`](https://github.com/IchsanR/mamarecipe-backend)
 
 <!-- :rocket: [`Mamarecipe Web Service`](https://dove-chat.herokuapp.com/) -->
 
