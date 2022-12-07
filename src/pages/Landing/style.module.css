@@ -1,0 +1,152 @@
+.rightPanel {
+  height: 110%;
+  background-color: #EFC81A;
+  z-index: -9;
+}
+
+.loginButton{
+  z-index: 10;
+}
+
+.loginIcon {
+  width: 40px;
+  height: 40px;
+}
+
+.loginText {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.title {
+  font-size: 55px;
+  color: rgba(46, 38, 111, 1);
+  margin-top: 112px;
+}
+
+.searchInput {
+  height: 55px;
+  background-color: #EFEFEF;
+}
+
+.landingImage {
+  width: 450px;
+  height: 450px;
+  margin-left: 28px;
+}
+
+.title2 {
+  border-left: 18px solid #EFC81A;
+  color: #3F3A3A;
+  font-size: 30px;
+}
+
+.midImg {
+  width: 450px;
+  height: 450px;
+}
+
+.borderImg1 {
+  width: 415px;
+  height: 430px;
+  z-index: -9;
+  border: 2px solid #EFC81A;
+  margin-top: 66px;
+  margin-left: 96px;
+  border-radius: 10px;
+}
+
+.subtitle {
+  font-size: 35px;
+}
+
+.borderShort{
+  width: 60px;
+  height: 17px;
+  border-bottom: 3px solid #6F6A40;
+}
+
+.tbl {
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background-color: #EFC81A;
+  color: #FFFFFF;
+}
+
+.borderImg2 {
+  background-color: #EFC81A;
+  height: 450px;
+  z-index: -9;
+}
+
+/* .thumbs {
+  margin-left: 210px;
+} */
+
+.imageRow {
+  width: 325px;
+  height: 325px;
+  z-index: -9;
+}
+
+.desc {
+  color: #3F3A3A;
+  margin-top: -80px;
+  font-family: 'airbnb', sans-serif;
+}
+
+.desc2 {
+  margin-left: 380px;
+}
+
+.desc3 {
+  margin-left: 750px;
+}
+
+
+@media screen and (max-width:480px) {
+  .loginIcon {
+    display: none;
+  }
+
+  .loginButton{
+    margin-top: 20px;
+  }
+
+  .rightPanel {
+    display: none;
+  }
+
+  .title {
+    margin-top: -30px;
+    font-size: 40px;
+  }
+  
+  .landingImage {
+    display: none;
+  }
+
+  .borderImg1 {
+    display: none;
+  }
+
+  .midImg {
+    width: 250px;
+    height: 250px;
+  }
+
+  .desc1 {
+    margin-left: 10px;
+  }
+  
+  .desc2 {
+    margin-left: 10px;
+  }
+
+  .desc3 {
+    margin-left: 10px;
+  }
+  
+}

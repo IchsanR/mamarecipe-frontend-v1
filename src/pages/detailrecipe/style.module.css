@@ -1,0 +1,169 @@
+@font-face {
+  font-family: airbnbBd;
+  src: url('../../asset/font/airbnb/AirbnbCereal_W_Bd.otf');
+}
+@font-face {
+  font-family: airbnbLt;
+  src: url('../../asset/font/airbnb/AirbnbCereal_W_Lt.otf');
+}
+
+.fontLt {
+  font-family: airbnbLt;
+}
+
+.fontBd {
+  font-family: airbnbBd;
+}
+
+.title {
+  color: #2E266F;
+}
+
+.contentImage {
+  height: 550px
+}
+
+.bookmark {
+  z-index: 10;
+  margin-right: 325px;
+  width: 5%;
+  height: 12%;
+}
+
+.like {
+  z-index: 10;
+  width: 5%;
+  height: 12%;
+  padding: 10px;
+  background-color: #dadada;
+  margin-right: 245px;
+  border-radius: 18px;
+}
+
+.buttons {
+  height: 170%;
+  background-color: #EFC81A;
+  border-radius: 15px;
+  border: none;
+}
+
+.commentInputs {
+  resize: none;
+  background-color: #F6F5F4;
+  padding-left: 15px;
+}
+
+.labels {
+  color: #666666;
+}
+
+.buttonSubmit {
+  background-color: #EFC81A;
+  border-radius: 5px;
+  border: none;
+  height: 15%;
+  color: #F6F5F4;
+}
+
+.profilePic {
+  width: 50px;
+  height: 50px;
+}
+
+.comments{
+  margin-top: -5px;
+}
+
+.leftPanel {
+  height: 150%;
+  width: 50px;
+  background-color: #EFC81A;
+  z-index: -10;
+}
+
+.videoRecipe {
+  margin-left: 100px;
+  width: 700px;
+  height: 400px;
+}
+
+.videoTitle {
+  margin-left: 100px;
+}
+
+.videoTime {
+  color: #AAAAAA;
+  margin-left: 100px;
+}
+
+.rightPanel {
+  margin-top: 100px;
+}
+
+.cards{
+  border: none;
+  width: 250px;
+}
+
+.cBody {
+  margin-left: -14px;
+  padding-right: 10px;
+}
+
+.cText {
+  font-size: 10px;
+}
+
+.nextTitle {
+  font-size: 15px;
+}
+
+@media screen and (max-width:480px) {
+  .bookmark {
+    margin-right: 65px;
+  }
+
+  .contentImage {
+    height: 275px
+  }
+  
+  
+  .like {
+    border-radius: 8px;
+    margin-right: 40px;
+  }
+
+  .leftPanel {
+    display: none;
+  }
+
+  .videoRecipe {
+    margin-left: 25px;
+    width: 324px;
+    height: 270px;
+  }
+
+  .videoTitle {
+    margin-left: 25px;
+  }
+
+  .videoTime {
+    margin-left: 25px;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  .bookmark {
+    margin-right: 470px;
+  }
+  
+  .like {
+    margin-right: 360px;
+  }
+
+  .videoRecipe {
+    margin-left: 208px;
+    width: 1120px;
+    height: 620px;
+  }
+}

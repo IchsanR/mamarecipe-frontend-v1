@@ -1,0 +1,19 @@
+.imageThumbs {
+  width: 170px;
+  height: 170px;
+}
+
+.links {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 480px) {
+  .imageThumbs {
+    width: 80px;
+    height: 80px;
+  }
+
+  .mobiles {
+    margin-left: 1.4rem;
+  }
+}
