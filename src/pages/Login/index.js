@@ -25,10 +25,14 @@ const Login = () => {
 		};
 
 		const handleSuccess = (response) => {
-			console.log(response);
-			localStorage.setItem("token", response.data.data.token);
-			localStorage.setItem("data", JSON.stringify(response.data.data.data));
-			return navigate("/home");
+			if (response.data.code == 200) {
+				localStorage.setItem("token", response.data.data.token);
+				localStorage.setItem("data", JSON.stringify(response.data.data.data));
+				alert(response.data.message);
+				return navigate("/home");
+			} else {
+				alert(response.data.message);
+			}
 		};
 
 		dispatch(userLogin(body, handleSuccess));

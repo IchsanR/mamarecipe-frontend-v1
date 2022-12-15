@@ -46,6 +46,26 @@ const recipeReducer = (state = initialState, action) => {
 			return { ...state, isLoading: false, isError: true };
 		case "GET_USER_RECIPE_PENDING":
 			return { ...state, isLoading: true };
+		case "GET_LIKED_RECIPE_PENDING":
+			return { ...state, isLoading: true };
+		case "GET_LIKED_RECIPE_FULFILLED":
+			return {
+				...state,
+				isLoading: false,
+				data: action.payload.data.data,
+			};
+		case "GET_LIKED_RECIPE_REJECTED":
+			return { ...state, isLoading: false, isError: true };
+		case "GET_SAVED_RECIPE_PENDING":
+			return { ...state, isLoading: true };
+		case "GET_SAVED_RECIPE_FULFILLED":
+			return {
+				...state,
+				isLoading: false,
+				data: action.payload.data.data,
+			};
+		case "GET_SAVED_RECIPE_REJECTED":
+			return { ...state, isLoading: false, isError: true };
 		default:
 			return state;
 	}

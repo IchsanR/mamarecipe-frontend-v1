@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import contentImage from "../../asset/images/Rectangle 313.jpg";
@@ -7,22 +7,55 @@ import bookmark from "../../asset/images/Save.png";
 import like from "../../asset/images/Vector.png";
 import play from "../../asset/images/s.png";
 import profilePic from "../../asset/images/Ellipse 128.png";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getDetailRecipe } from "../../redux/action/recipe";
+import {
+	getDetailRecipe,
+	insertLike,
+	insertSaved,
+} from "../../redux/action/recipe";
 
 const Detail = () => {
 	const dispatch = useDispatch();
-
+	const navigate = useNavigate();
+	const { id_recipe } = useParams();
+	const user = JSON.parse(localStorage.getItem("data"));
 	const recipe = useSelector((state) => {
 		return state.recipe.data;
 	});
 
-	const { id_recipe } = useParams();
-
 	useEffect(() => {
 		dispatch(getDetailRecipe(id_recipe));
 	}, []);
+
+	// Like recipe
+	const likeHandle = (e) => {
+		e.preventDefault();
+		const data = {
+			idrecipe: id_recipe,
+			iduser: user.id_user,
+		};
+
+		const handleSuccess = (response) => {
+			alert(response.data.message);
+			return navigate("/profile");
+		};
+		insertLike(data, handleSuccess);
+	};
+
+	const savedHandle = (e) => {
+		e.preventDefault();
+		const data = {
+			idrecipe: id_recipe,
+			iduser: user.id_user,
+		};
+
+		const handleSuccess = (response) => {
+			alert(response.data.message);
+			return navigate("/profile");
+		};
+		insertSaved(data, handleSuccess);
+	};
 
 	return (
 		<>
@@ -43,11 +76,15 @@ const Detail = () => {
 							<img
 								src={bookmark}
 								alt=""
+								type="button"
+								onClick={(e) => savedHandle(e)}
 								className={`${style.bookmark} position-absolute bottom-0 end-0 mb-3`}
 							/>
 							<img
 								src={like}
 								alt=""
+								type="button"
+								onClick={(e) => likeHandle(e)}
 								className={`${style.like} position-absolute bottom-0 end-0 mb-3`}
 							/>
 						</div>

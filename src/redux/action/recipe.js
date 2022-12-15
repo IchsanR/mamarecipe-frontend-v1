@@ -11,12 +11,21 @@ export const getRecipe = () => {
 	};
 };
 
-export const getUserRecipe = (iduser) => {
+export const getUserRecipe = (iduser, handleUserRecipe) => {
 	return {
 		type: "GET_USER_RECIPE",
-		payload: axios({
-			url: `${process.env.REACT_APP_BACKEND_URL}/recipe/user/${iduser}`,
-			method: "GET",
+		payload: new Promise((resolve, reject) => {
+			axios({
+				url: `${process.env.REACT_APP_BACKEND_URL}/recipe/user/${iduser}`,
+				method: "GET",
+			})
+				.then((response) => {
+					resolve(response);
+					handleUserRecipe(response);
+				})
+				.catch((error) => {
+					reject(error);
+				});
 		}),
 	};
 };
@@ -107,4 +116,96 @@ export const recipeDelete = (id_recipe) => {
 				reject(error);
 			});
 	});
+};
+
+export const deleteLike = (id_recipe) => {
+	return new Promise((resolve, reject) => {
+		axios
+			.delete(`${process.env.REACT_APP_BACKEND_URL}/recipe/liked/${id_recipe}`)
+			.then((response) => {
+				resolve(response);
+			})
+			.catch((error) => {
+				reject(error);
+			});
+	});
+};
+
+export const insertLike = (data, handleSuccess) => {
+	return new Promise((resolve, reject) => {
+		axios
+			.post(`${process.env.REACT_APP_BACKEND_URL}/recipe/liked`, data)
+			.then((response) => {
+				resolve(response);
+				handleSuccess(response);
+			})
+			.catch((error) => {
+				reject(error);
+			});
+	});
+};
+
+export const getLiked = (iduser, handleLiked) => {
+	return {
+		type: "GET_LIKED_RECIPE",
+		payload: new Promise((resolve, reject) => {
+			axios({
+				url: `${process.env.REACT_APP_BACKEND_URL}/recipe/liked/${iduser}`,
+				method: "GET",
+			})
+				.then((response) => {
+					resolve(response);
+					handleLiked(response);
+				})
+				.catch((error) => {
+					reject(error);
+				});
+		}),
+	};
+};
+
+export const insertSaved = (data, handleSuccess) => {
+	return new Promise((resolve, reject) => {
+		axios
+			.post(`${process.env.REACT_APP_BACKEND_URL}/recipe/saved`, data)
+			.then((response) => {
+				resolve(response);
+				handleSuccess(response);
+			})
+			.catch((error) => {
+				reject(error);
+			});
+	});
+};
+
+export const deleteSaved = (id_recipe) => {
+	return new Promise((resolve, reject) => {
+		axios
+			.delete(`${process.env.REACT_APP_BACKEND_URL}/recipe/saved/${id_recipe}`)
+			.then((response) => {
+				resolve(response);
+			})
+			.catch((error) => {
+				reject(error);
+			});
+	});
+};
+
+export const getSaved = (iduser, handleSaved) => {
+	return {
+		type: "GET_SAVED_RECIPE",
+		payload: new Promise((resolve, reject) => {
+			axios({
+				url: `${process.env.REACT_APP_BACKEND_URL}/recipe/saved/${iduser}`,
+				method: "GET",
+			})
+				.then((response) => {
+					resolve(response);
+					handleSaved(response);
+				})
+				.catch((error) => {
+					reject(error);
+				});
+		}),
+	};
 };
