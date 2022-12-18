@@ -107,7 +107,7 @@ Mama recipe is the web application that you can post your delicious recipe. You 
   <summary>
     Search Recipe Page
   </summary>
-<img src="/screenshot/Search Recipe.png" alt="search recipe page" />
+<img src="/screenshots/search.png" alt="search recipe page" />
 </details>
 
 ### Built With
