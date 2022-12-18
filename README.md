@@ -5,7 +5,7 @@
 
   <h3 align="center">Mama Recipe</h3>
   <p align="center">
-    <image align="center" width="100" height="100" src='./public/mamarecipelogo.png' />
+    <image align="center" width="400" src='./public/mamarecipelogo.png' />
   </p>
 
   <p align="center">
