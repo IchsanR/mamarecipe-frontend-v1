@@ -5,7 +5,7 @@
 
   <h3 align="center">Mama Recipe</h3>
   <p align="center">
-    <image align="center" width="100" height="100" src='./public/logo.png' />
+    <image align="center" width="100" height="100" src='./public/mamarecipelogo.png' />
   </p>
 
   <p align="center">
@@ -49,17 +49,91 @@
 
 Mama recipe is the web application that you can post your delicious recipe. You can create your account and start posting your recipe.
 
+### Project Structure
+
+```
+|── Food-Recipes
+   |── public            # Public Assets
+   |── screenshot        # Screenshots of the application
+   |── src               # Project source code
+       |── assets        # Application assets
+       |── component     # Application components
+       |── redux         # State management
+       |── router        # Endpoint
+       |── views         # Pages source code
+   |── .env              # Environment variables
+   |── .gitignore        # Files that should be ignored
+   |── README.md         # Readme
+```
+
+### Screenshots
+
+<details>
+  <summary>
+    Login Page
+  </summary>
+<img src="/screenshots/login.png" alt="login page" />
+</details>
+
+<details>
+  <summary>
+    Register Page
+  </summary>
+<img src="/screenshots/register.png" alt="register page" />
+</details>
+
+<details>
+  <summary>
+    Landing Page
+  </summary>
+<img src="/screenshots/homepage.png" alt="landing page" />
+</details>
+
+<details>
+  <summary>
+    Recipe Detail Page
+  </summary>
+<img src="/screenshots/detailrecipe.png" alt="recipe detail page" />
+</details>
+
+<details>
+  <summary>
+    Recipe Update Page
+  </summary>
+<img src="/screenshots/updaterecipe.png" alt="recipe update page" />
+</details>
+
+<details>
+  <summary>
+    Profile Page
+  </summary>
+<img src="/screenshots/profile.png" alt="profile page" />
+</details>
+
+<details>
+  <summary>
+    Add Recipe Page
+  </summary>
+<img src="/screenshots/addrecipe.png" alt="add recipe page" />
+</details>
+
+<details>
+  <summary>
+    Search Recipe Page
+  </summary>
+<img src="/screenshot/Search Recipe.png" alt="search recipe page" />
+</details>
+
 ### Built With
 
 This app was built with some technologies below:
 
-- [JavaScript](https://www.javascript.com/)
-- [Node.js](https://nodejs.org/en/)
-- [React.js](https://reactjs.org/)
+- [React JS](https://reactjs.org/)
 - [Bootstrap](https://getbootstrap.com/)
 - [Axios](https://axios-http.com/)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+- [jQuery](https://jquery.com/)
+- [Redux](https://redux.js.org/)
+- [React Router DOM](https://www.npmjs.com/package/react-router-dom)
 
 <!-- Getting Started -->
 
@@ -76,38 +150,27 @@ This is an example of how to list things you need to use the software and how to
 
 - Clone the repository
 
-```
+```sh
 git clone https://github.com/IchsanR/mamarecipe-frontend.git
 ```
 
 - Go to repository folder
 
-```
-cd peworld-frontend
+```sh
+cd mamarecipe-frontend
 ```
 
 - Install Module
 
-```
+```sh
 npm install / npm i
 ```
 
-- Connect with database
-- <a href="#setup-env-example">Setup .env</a>
-- Type ` npm start` To Start Development
+- Change the .env configuration at your root folder project like this
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-### Setup .env example
-
-Create .env file in your root project folder.
-
-```env
-# app
-REACT_APP_BACKEND_URL = [API_URL]
+```sh
+REACT_APP_BACKEND_URL = your_api_url
 ```
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- Contributing -->
 
@@ -120,12 +183,6 @@ Contributions are what make the open source community such an amazing place to b
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin your-branch`)
 5. Open a Pull Request
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- Screenshoots -->
-
-## Screenshoots
 
 <!-- Related Projects -->
 
