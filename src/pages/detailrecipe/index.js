@@ -20,7 +20,7 @@ const Detail = () => {
 	const { id_recipe } = useParams();
 	const user = JSON.parse(localStorage.getItem("data"));
 	const recipe = useSelector((state) => {
-		if (state.recipe.data.length === 0) {
+		if (state.recipe.data.length === undefined || state.recipe.data.length === 0) {
 			return state.recipe.data;
 		} else {
 			return state.recipe.data[0];
