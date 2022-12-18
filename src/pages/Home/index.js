@@ -71,7 +71,7 @@ const Home = () => {
 						<div className="col-md-6">
 							<div className={`${style.borderImg1} position-absolute`}></div>
 							<div>
-								<img src={midImg} alt="picture" className={`${style.midImg}`} />
+								<img src={midImg} alt="" className={`${style.midImg}`} />
 							</div>
 						</div>
 						<div className="col-auto"></div>
@@ -110,11 +110,7 @@ const Home = () => {
 							<div
 								className={`${style.borderImg2} position-absolute col-md-3 start-0`}></div>
 							<div className={`mt-md-5`}>
-								<img
-									src={midImg2}
-									alt="picture"
-									className={`${style.midImg}`}
-								/>
+								<img src={midImg2} alt="" className={`${style.midImg}`} />
 							</div>
 						</div>
 						<div className="col-auto"></div>

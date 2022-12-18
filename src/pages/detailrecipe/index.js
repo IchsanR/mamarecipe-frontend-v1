@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import contentImage from "../../asset/images/Rectangle 313.jpg";
 import style from "./style.module.css";
 import bookmark from "../../asset/images/Save.png";
 import like from "../../asset/images/Vector.png";
@@ -21,12 +20,18 @@ const Detail = () => {
 	const { id_recipe } = useParams();
 	const user = JSON.parse(localStorage.getItem("data"));
 	const recipe = useSelector((state) => {
-		return state.recipe.data;
+		if (state.recipe.data.length === undefined) {
+			return state.recipe.data;
+		} else {
+			return state.recipe.data[0];
+		}
 	});
+
+	console.log(recipe);
 
 	useEffect(() => {
 		dispatch(getDetailRecipe(id_recipe));
-	}, []);
+	}, [id_recipe, dispatch]);
 
 	// Like recipe
 	const likeHandle = (e) => {
@@ -69,7 +74,7 @@ const Detail = () => {
 						</h1>
 						<div className={`mt-5 position-relative`}>
 							<img
-								src={`${process.env.REACT_APP_BACKEND_URL}/recipe/${recipe.image}`}
+								src={`${recipe.image.split("|&&|")[0]}`}
 								alt=""
 								className={`${style.contentImage} img-fluid rounded mx-auto d-block position-relative col-md-8 col-10`}
 							/>

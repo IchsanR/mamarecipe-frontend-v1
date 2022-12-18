@@ -25,7 +25,7 @@ const Login = () => {
 		};
 
 		const handleSuccess = (response) => {
-			if (response.data.code == 200) {
+			if (response.data.code === 200) {
 				localStorage.setItem("token", response.data.data.token);
 				localStorage.setItem("data", JSON.stringify(response.data.data.data));
 				alert(response.data.message);

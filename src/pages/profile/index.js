@@ -6,7 +6,6 @@ import Footer from "../../components/Footer";
 
 import profileImage from "../../asset/images/Photo Profile.png";
 import editButton from "../../asset/images/edit-3.png";
-import { useDispatch, useSelector } from "react-redux";
 import {
 	deleteLike,
 	deleteSaved,
@@ -26,7 +25,6 @@ const Profile = () => {
 	const [owned, setOwned] = useState([]);
 	const [liked, setLiked] = useState([]);
 	const [saved, setSaved] = useState([]);
-	const [tab, setTab] = useState(1);
 
 	useEffect(() => {
 		const handleUserRecipe = (response) => {
@@ -43,7 +41,9 @@ const Profile = () => {
 			setSaved(response.data.data || []);
 		};
 		getSaved(iduser, handleSaved);
-	}, []);
+	}, [iduser]);
+
+	console.log(owned);
 
 	const deleteRecipe = (id_recipe, e) => {
 		e.preventDefault();
@@ -70,6 +70,7 @@ const Profile = () => {
 				const posts = delLike.filter((item) => item.id_recipe !== id_recipe);
 				setDelLike({ data: posts });
 				alert("unlike berhasil");
+				return navigate("/home");
 			})
 			.catch(() => {
 				alert("Failed Delete Data");
@@ -84,6 +85,7 @@ const Profile = () => {
 				const posts = delSave.filter((item) => item.id_recipe !== id_recipe);
 				setDelSave({ data: posts });
 				alert("unsave berhasil");
+				return navigate("/home");
 			})
 			.catch(() => {
 				alert("Failed Delete Data");
@@ -142,32 +144,41 @@ const Profile = () => {
 							<li className={`${style.titleRecipe}`}>
 								<Link
 									className={`ms-md-5 me-md-3 me-xxl-5 ${style.menuLink}`}
+									data-bs-toggle="collapse"
+									data-bs-target="#myRecipe"
 									type="button"
-									onClick={() => setTab(1)}>
+									aria-expanded="false"
+									aria-controls="myRecipe">
 									My Recipe
 								</Link>
 							</li>
 							<li className={`${style.titleRecipe}`}>
 								<Link
 									className={`mx-md-5 mx-xxl-5 ${style.menuLink}`}
-									type="button"
-									onClick={() => setTab(2)}>
+									data-bs-toggle="collapse"
+									data-bs-target="#savedRecipe"
+									role="button"
+									aria-expanded="false"
+									aria-controls="savedRecipe">
 									Saved Recipe
 								</Link>
 							</li>
 							<li className={`${style.titleRecipe}`}>
 								<Link
 									className={`mx-md-3 mx-xxl-5 ${style.menuLink}`}
-									type="button"
-									onClick={() => setTab(3)}>
+									data-bs-toggle="collapse"
+									data-bs-target="#likeRecipe"
+									role="button"
+									aria-expanded="false"
+									aria-controls="likeRecipe">
 									Liked Recipe
 								</Link>
 							</li>
 						</ul>
 						<div
 							className={`border container-fluid mt-4 ${style.sectionLimit}`}></div>
-						{tab == 1 ? (
-							owned.length == 0 ? (
+						<div className="collapse" id="myRecipe">
+							{owned.length === 0 ? (
 								<h1>No Recipe Found</h1>
 							) : (
 								owned.map((item, index) => (
@@ -177,7 +188,7 @@ const Profile = () => {
 										<div className={`${style.block} ${style.flex}`}>
 											<Link to={`/detail/${item.id_recipe}`}>
 												<img
-													src={`${process.env.REACT_APP_BACKEND_URL}/recipe/${item.image}`}
+													src={`${item.image.split("|&&|")[0]}`}
 													alt=""
 													className={`${style.imageRow}`}
 												/>
@@ -208,47 +219,53 @@ const Profile = () => {
 										</div>
 									</div>
 								))
-							)
-						) : tab == 2 ? (
-							saved.length == 0 ? (
+							)}
+						</div>
+						{saved.length === 0 ? (
+							<div className="collapse" id="savedRecipe">
 								<h1>No Recipe Found</h1>
-							) : (
-								saved.map((item, index) => (
-									<div
-										key={index}
-										className={`my-md-3 ${style.menuCollapse} mx-md-3`}>
-										<Link to={`/detail/${item.id_recipe}`}>
-											<img
-												src={`${process.env.REACT_APP_BACKEND_URL}/recipe/${item.image}`}
-												alt=""
-												className={`${style.imageRow}`}
-											/>
-											<p
-												className={`${style.desc} ${style.desc1} position-absolute fs-4 ms-md-3 `}>
-												{item.title}
-											</p>
-										</Link>
-										<div>
-											<button
-												type="button"
-												className="btn btn-danger my-2"
-												onClick={(e) => deleteSave(item.id_recipe, e)}>
-												Unsaved
-											</button>
-										</div>
+							</div>
+						) : (
+							saved.map((item, index) => (
+								<div
+									key={index}
+									className={`my-md-3 ${style.menuCollapse} mx-md-3 collapse`}
+									id="savedRecipe">
+									<Link to={`/detail/${item.id_recipe}`}>
+										<img
+											src={`${item.image.split("|&&|")[0]}`}
+											alt=""
+											className={`${style.imageRow}`}
+										/>
+										<p
+											className={`${style.desc} ${style.desc1} position-absolute fs-4 ms-md-3 `}>
+											{item.title}
+										</p>
+									</Link>
+									<div>
+										<button
+											type="button"
+											className="btn btn-danger my-2"
+											onClick={(e) => deleteSave(item.id_recipe, e)}>
+											Unsaved
+										</button>
 									</div>
-								))
-							)
-						) : liked.length == 0 ? (
-							<h1>No Recipe Found</h1>
+								</div>
+							))
+						)}
+						{liked.length === 0 ? (
+							<div className="collapse" id="likeRecipe">
+								<h1>No Recipe Found</h1>
+							</div>
 						) : (
 							liked.map((item, index) => (
 								<div
 									key={index}
-									className={`my-md-3 ${style.menuCollapse} mx-md-3`}>
+									className={`my-md-3 ${style.menuCollapse} mx-md-3 collapse`}
+									id="likeRecipe">
 									<Link to={`/detail/${item.id_recipe}`}>
 										<img
-											src={`${process.env.REACT_APP_BACKEND_URL}/recipe/${item.image}`}
+											src={`${item.image.split("|&&|")[0]}`}
 											alt=""
 											className={`${style.imageRow}`}
 										/>

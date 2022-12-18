@@ -46,7 +46,7 @@ const AddRecipe = () => {
 		addRecipe(inputForm)
 			.then((response) => {
 				console.log(response);
-				if (response.data.command == "INSERT") {
+				if (response.data.command === "INSERT") {
 					alert("Input berhasil");
 				}
 				return navigate(`/profile`);

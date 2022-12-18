@@ -2,7 +2,6 @@ import React from "react";
 import Leftpanel from "../../../components/Leftpanel";
 import { Link } from "react-router-dom";
 import style from "../style.module.css";
-import axios from "axios";
 
 const Reset = () => {
 	return (

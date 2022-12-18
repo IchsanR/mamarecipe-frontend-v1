@@ -20,7 +20,7 @@ const Searching = () => {
 
 	useEffect(() => {
 		dispatch(getSearchRecipe(title, sort, page));
-	}, [title, sort, page]);
+	}, [title, sort, page, dispatch]);
 
 	const recipe = useSelector((state) => {
 		return state.recipe;
@@ -41,7 +41,7 @@ const Searching = () => {
 	};
 
 	const sorting = () => {
-		sort == "asc" ? setSort("desc") : setSort("asc");
+		sort === "asc" ? setSort("desc") : setSort("asc");
 		dispatch(title, sort, page);
 	};
 
@@ -72,7 +72,7 @@ const Searching = () => {
 						/>
 					</div>
 				</form>
-				{recipe.data.length == 0 || undefined || null ? (
+				{recipe.data.length === 0 || undefined || null ? (
 					<h1 className="text-center">No recipe found</h1>
 				) : (
 					recipe.data.map((item, index) => (
@@ -84,7 +84,7 @@ const Searching = () => {
 									className={`col-md-8 col-12 row position-relative start-50 translate-middle-x border rounded p-3 mb-2 ${style.mobiles}`}>
 									<div className="col-auto">
 										<img
-											src={`${process.env.REACT_APP_BACKEND_URL}/recipe/${item.image}`}
+											src={`${item.image.split("|&&|")[0]}`}
 											alt=""
 											className={`${style.imageThumbs} rounded`}
 										/>

@@ -21,10 +21,10 @@ const Registration = () => {
 	const onSubmit = (e) => {
 		e.preventDefault();
 		if (
-			form.name == "" ||
-			form.email == "" ||
-			form.password == "" ||
-			form.phone == ""
+			form.name === "" ||
+			form.email === "" ||
+			form.password === "" ||
+			form.phone === ""
 		) {
 			alert("Semua form harus diisi");
 		} else {

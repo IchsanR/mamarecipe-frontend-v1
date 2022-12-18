@@ -3,8 +3,7 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import style from "./style.module.css";
 import addImages from "../../asset/images/image.png";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import axios from "axios";
+import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getDetailRecipe, recipeUpdate } from "../../redux/action/recipe";
 
@@ -20,7 +19,7 @@ const UpdateRecipe = () => {
 	//hook useEffect
 	useEffect(() => {
 		dispatch(getDetailRecipe(id_recipe));
-	}, []);
+	}, [dispatch, id_recipe]);
 
 	const recipe = useSelector((state) => {
 		return state.recipe.data;
@@ -51,13 +50,10 @@ const UpdateRecipe = () => {
 			});
 	};
 
-	let formPost = useRef();
-
 	return (
 		<>
 			<div className="container-fluid row">
 				<Navbar />
-				{/* {JSON.stringify(recipe)} */}
 				<form onSubmit={updateSubmit}>
 					<div className={`container-fluid row my-5`}>
 						<div className="input-group mb-3 col-12 position-relative start-50 translate-middle-x">

@@ -51,11 +51,7 @@ const Landing = () => {
 					</div>
 					<div className="col-auto"></div>
 					<div className="col-md-4 img-landing">
-						<img
-							src={homeImg}
-							alt="picture"
-							className={`${style.landingImage}`}
-						/>
+						<img src={homeImg} alt="" className={`${style.landingImage}`} />
 					</div>
 				</div>
 				<div className={`position-relative row justify-content-center my-5`}>
@@ -66,7 +62,7 @@ const Landing = () => {
 						<div className="col-md-6">
 							<div className={`${style.borderImg1} position-absolute`}></div>
 							<div>
-								<img src={midImg} alt="picture" className={`${style.midImg}`} />
+								<img src={midImg} alt="" className={`${style.midImg}`} />
 							</div>
 						</div>
 						<div className="col-md-auto"></div>
@@ -105,11 +101,7 @@ const Landing = () => {
 							<div
 								className={`${style.borderImg2} position-absolute col-md-3 start-0`}></div>
 							<div className={`mt-md-5`}>
-								<img
-									src={midImg2}
-									alt="picture"
-									className={`${style.midImg}`}
-								/>
+								<img src={midImg2} alt="" className={`${style.midImg}`} />
 							</div>
 						</div>
 						<div className="col-md-auto"></div>
