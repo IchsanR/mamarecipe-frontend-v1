@@ -10,7 +10,7 @@
 
   <p align="center">
     <br />
-    <a href="https://github.com/IchsanR/mamarecipe-backend"><strong>Explore Backend docs »</strong></a>
+    <a href="https://mamarecipe-frontend.vercel.app/"><strong>View Demo</strong></a>
     <br />
   </p>
 </p>
@@ -176,8 +176,6 @@ Contributions are what make the open source community such an amazing place to b
 
 :rocket: [`Mamarecipe (Backend)`](https://github.com/IchsanR/mamarecipe-backend)
 
-<!-- :rocket: [`Mamarecipe Web Service`](https://dove-chat.herokuapp.com/) -->
-
-<!-- :rocket: [`Mamarecipe App Demo`](https://dove-chat-fe.vercel.app/login) -->
+:rocket: [`Demo Project`](https://mamarecipe-frontend.vercel.app/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
