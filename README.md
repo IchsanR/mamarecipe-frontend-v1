@@ -19,29 +19,15 @@
 
 ## Table of Contents
 
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#requirements">Requirements</a></li>
-        <li><a href="#installation">Installation</a></li>
-        <li><a href="#setup-env-example">Setup .env example</a></li>
-      </ul>
-    </li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#screenshoots">Screenshoots</a></li>
-    <li><a href="#related-project">Related Projects</a></li>
-  </ol>
-</details>
+- [About the Project](#about-the-project)
+  - [Project Structure](#project-structure)
+  - [Screenshots](#screenshots)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Contributing](#contributing)
+- [Related Project](#related-project)
 
 <!-- About The Project -->
 
@@ -58,9 +44,9 @@ Mama recipe is the web application that you can post your delicious recipe. You 
    |── src               # Project source code
        |── assets        # Application assets
        |── component     # Application components
+       |── pages         # Pages source code
        |── redux         # State management
        |── router        # Endpoint
-       |── views         # Pages source code
    |── .env              # Environment variables
    |── .gitignore        # Files that should be ignored
    |── README.md         # Readme
