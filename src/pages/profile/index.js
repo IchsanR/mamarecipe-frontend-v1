@@ -66,11 +66,15 @@ const Profile = () => {
 		e.preventDefault();
 
 		deleteLike(id_recipe)
-			.then(() => {
+			.then((res) => {
 				const posts = delLike.filter((item) => item.id_recipe !== id_recipe);
 				setDelLike({ data: posts });
-				alert("unlike berhasil");
-				return navigate("/home");
+				if (res.data.command === "DELETE") {
+					alert("unlike berhasil");
+					return navigate("/home");
+				} else {
+					alert("unlike tidak berhasil");
+				}
 			})
 			.catch(() => {
 				alert("Failed Delete Data");
@@ -81,11 +85,15 @@ const Profile = () => {
 		e.preventDefault();
 
 		deleteSaved(id_recipe)
-			.then(() => {
+			.then((res) => {
 				const posts = delSave.filter((item) => item.id_recipe !== id_recipe);
 				setDelSave({ data: posts });
-				alert("unsave berhasil");
-				return navigate("/home");
+				if (res.data.command === "DELETE") {
+					alert("unsaved berhasil");
+					return navigate("/home");
+				} else {
+					alert("unsaved tidak berhasil");
+				}
 			})
 			.catch(() => {
 				alert("Failed Delete Data");
