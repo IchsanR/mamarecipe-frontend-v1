@@ -43,8 +43,6 @@ const Profile = () => {
 		getSaved(iduser, handleSaved);
 	}, [iduser]);
 
-	console.log(owned);
-
 	const deleteRecipe = (id_recipe, e) => {
 		e.preventDefault();
 
