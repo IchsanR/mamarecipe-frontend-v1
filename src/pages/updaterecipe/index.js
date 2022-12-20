@@ -10,7 +10,7 @@ import { getDetailRecipe, recipeUpdate } from "../../redux/action/recipe";
 const UpdateRecipe = () => {
 	const navigate = useNavigate();
 	const hiddenFileInput = useRef(null);
-	const [image, setImage] = useState("");
+	const [image, setImage] = useState(null);
 	const dispatch = useDispatch();
 	const handleClick = (event) => {
 		hiddenFileInput.current.click();
@@ -22,7 +22,7 @@ const UpdateRecipe = () => {
 	}, [dispatch, id_recipe]);
 
 	const recipe = useSelector((state) => {
-		return state.recipe.data;
+		return state.recipe.details[0];
 	});
 
 	const updateSubmit = (event) => {

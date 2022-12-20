@@ -20,17 +20,8 @@ const Detail = () => {
 	const { id_recipe } = useParams();
 	const user = JSON.parse(localStorage.getItem("data"));
 	const recipe = useSelector((state) => {
-		if (
-			state.recipe.data.length === undefined ||
-			state.recipe.data.length === 0
-		) {
-			return state.recipe.data;
-		} else {
-			return state.recipe.data[0];
-		}
+		return state.recipe.details[0];
 	});
-
-	console.log(recipe);
 
 	useEffect(() => {
 		dispatch(getDetailRecipe(id_recipe));
