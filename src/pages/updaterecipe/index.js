@@ -22,7 +22,7 @@ const UpdateRecipe = () => {
 	}, [dispatch, id_recipe]);
 
 	const recipe = useSelector((state) => {
-		return state.recipe.details[0];
+		return state.recipe.data[0];
 	});
 
 	const updateSubmit = (event) => {

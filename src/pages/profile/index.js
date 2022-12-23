@@ -239,7 +239,7 @@ const Profile = () => {
 									id="savedRecipe">
 									<Link to={`/detail/${item.id_recipe}`}>
 										<img
-											src={`${item.image.split("|&&|")[0]}`}
+											src={item.image ? `${item.image.split("|&&|")[0]}` : "/"}
 											alt=""
 											className={`${style.imageRow}`}
 										/>
@@ -271,7 +271,7 @@ const Profile = () => {
 									id="likeRecipe">
 									<Link to={`/detail/${item.id_recipe}`}>
 										<img
-											src={`${item.image.split("|&&|")[0]}`}
+											src={item.image ? `${item.image.split("|&&|")[0]}` : "/"}
 											alt=""
 											className={`${style.imageRow}`}
 										/>

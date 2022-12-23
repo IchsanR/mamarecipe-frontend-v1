@@ -1,6 +1,5 @@
 const initialState = {
 	data: [],
-	details: [{}],
 	isLoading: false,
 	isError: false,
 };
@@ -23,7 +22,7 @@ const recipeReducer = (state = initialState, action) => {
 			return {
 				...state,
 				isLoading: false,
-				details: action.payload.data.data,
+				data: action.payload.data.data,
 			};
 		case "GET_DETAIL_RECIPE_REJECTED":
 			return { ...state, isLoading: false, isError: true };

@@ -20,12 +20,13 @@ const Detail = () => {
 	const { id_recipe } = useParams();
 	const user = JSON.parse(localStorage.getItem("data"));
 	const recipe = useSelector((state) => {
-		return state.recipe.details[0];
+		return state.recipe.data;
 	});
 
+	console.log(recipe);
 	useEffect(() => {
 		dispatch(getDetailRecipe(id_recipe));
-	}, [id_recipe, dispatch]);
+	}, [id_recipe]);
 
 	// Like recipe
 	const likeHandle = (e) => {
@@ -64,11 +65,15 @@ const Detail = () => {
 					<div
 						className={`col-12 position-relative start-50 translate-middle-x mt-5 ms-4`}>
 						<h1 className={`text-center mb-5 ${style.fontBd} ${style.title}`}>
-							{recipe.title}
+							{recipe[0].title}
 						</h1>
 						<div className={`mt-5 position-relative`}>
 							<img
-								src={`${recipe.image.split("|&&|")[0]}`}
+								src={
+									recipe.length === 1
+										? `${recipe[0].image.split("|&&|")[0]}`
+										: ""
+								}
 								alt=""
 								className={`${style.contentImage} img-fluid rounded mx-auto d-block position-relative col-md-8 col-10`}
 							/>
@@ -92,7 +97,7 @@ const Detail = () => {
 								<h3 className={`${style.fontBd}`}>Ingredients</h3>
 							</div>
 							<div className={`col-10 mt-3`}>
-								<p className={`fs-4`}>{recipe.ingredients}</p>
+								<p className={`fs-4`}>{recipe[0].ingredients}</p>
 							</div>
 						</div>
 						<div className={`row justify-content-center mt-3 mt-md-5`}>
@@ -144,7 +149,7 @@ const Detail = () => {
 									id="floatingTextarea2"
 									style={{ height: "350px" }}></textarea>
 								<label
-									for="floatingTextarea2"
+									htmlFor="floatingTextarea2"
 									className={`${style.labels} ${style.fontBd}`}>
 									Comment :
 								</label>
