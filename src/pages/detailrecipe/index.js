@@ -65,7 +65,7 @@ const Detail = () => {
 					<div
 						className={`col-12 position-relative start-50 translate-middle-x mt-5 ms-4`}>
 						<h1 className={`text-center mb-5 ${style.fontBd} ${style.title}`}>
-							{recipe[0].title}
+							{recipe.length === 1 ? recipe[0].title : ""}
 						</h1>
 						<div className={`mt-5 position-relative`}>
 							<img
@@ -97,7 +97,9 @@ const Detail = () => {
 								<h3 className={`${style.fontBd}`}>Ingredients</h3>
 							</div>
 							<div className={`col-10 mt-3`}>
-								<p className={`fs-4`}>{recipe[0].ingredients}</p>
+								<p className={`fs-4`}>
+									{recipe.length === 1 ? recipe[0].ingredients : ""}
+								</p>
 							</div>
 						</div>
 						<div className={`row justify-content-center mt-3 mt-md-5`}>
