@@ -90,7 +90,7 @@ const UpdateRecipe = () => {
 								className={`${style.input} form-control position-relative start-50 translate-middle-x`}
 								type="text"
 								placeholder="Title"
-								defaultValue={recipe.length === 1 ? recipe.title : ""}
+								defaultValue={recipe.length === 1 ? recipe[0].title : ""}
 								name="title"
 								aria-label="default input example"
 							/>
@@ -100,7 +100,7 @@ const UpdateRecipe = () => {
 								className={`${style.input} ${style.textarea} form-control position-relative start-50 translate-middle-x`}
 								type="text"
 								placeholder="Ingredients"
-								defaultValue={recipe.length === 1 ? recipe.ingredients : ""}
+								defaultValue={recipe.length === 1 ? recipe[0].ingredients : ""}
 								name="ingredients"></textarea>
 						</div>
 						<div className="my-3 col-md-7 position-relative start-50 translate-middle-x ">
@@ -108,7 +108,7 @@ const UpdateRecipe = () => {
 								className={`${style.input} form-control position-relative start-50 translate-middle-x`}
 								type="text"
 								placeholder="Video"
-								defaultValue={recipe.length === 1 ? recipe.video : ""}
+								defaultValue={recipe.length === 1 ? recipe[0].video : ""}
 								name="video"
 								aria-label="default input example"
 							/>
