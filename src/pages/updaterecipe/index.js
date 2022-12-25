@@ -22,7 +22,7 @@ const UpdateRecipe = () => {
 	}, [dispatch, id_recipe]);
 
 	const recipe = useSelector((state) => {
-		return state.recipe.data[0];
+		return state.recipe.data;
 	});
 
 	const updateSubmit = (event) => {
@@ -90,7 +90,7 @@ const UpdateRecipe = () => {
 								className={`${style.input} form-control position-relative start-50 translate-middle-x`}
 								type="text"
 								placeholder="Title"
-								defaultValue={recipe.title}
+								defaultValue={recipe.length === 1 ? recipe.title : ""}
 								name="title"
 								aria-label="default input example"
 							/>
@@ -100,7 +100,7 @@ const UpdateRecipe = () => {
 								className={`${style.input} ${style.textarea} form-control position-relative start-50 translate-middle-x`}
 								type="text"
 								placeholder="Ingredients"
-								defaultValue={recipe.ingredients}
+								defaultValue={recipe.length === 1 ? recipe.ingredients : ""}
 								name="ingredients"></textarea>
 						</div>
 						<div className="my-3 col-md-7 position-relative start-50 translate-middle-x ">
@@ -108,7 +108,7 @@ const UpdateRecipe = () => {
 								className={`${style.input} form-control position-relative start-50 translate-middle-x`}
 								type="text"
 								placeholder="Video"
-								defaultValue={recipe.video}
+								defaultValue={recipe.length === 1 ? recipe.video : ""}
 								name="video"
 								aria-label="default input example"
 							/>
