@@ -33,7 +33,7 @@
 
 ## About The Project
 
-Mama recipe is the web application that you can post your delicious recipe. You can create your account and start posting your recipe.
+Mama recipe is the web application that you can post your delicious recipe. You can create your account and start posting your recipe, you can also liked a reciepe. This website uses React JS and React Redux for the frontend development.
 
 ### Project Structure
 
