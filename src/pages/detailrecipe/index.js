@@ -98,7 +98,14 @@ const Detail = () => {
 							</div>
 							<div className={`col-10 mt-3`}>
 								<p className={`fs-4`}>
-									{recipe.length === 1 ? recipe[0].ingredients : ""}
+									{recipe.length === 1
+										? recipe[0].ingredients.split("\n").map((item) => (
+												<>
+													{item}
+													<br />
+												</>
+										  ))
+										: ""}
 								</p>
 							</div>
 						</div>
