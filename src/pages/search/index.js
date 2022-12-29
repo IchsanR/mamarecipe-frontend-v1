@@ -60,7 +60,9 @@ const Searching = () => {
 			<Navbar />
 			<div className="container-fluid row">
 				<div className="text-center">
-					<h4>Search recipe</h4>
+					<h4>
+						Showing results for "<span>{title}</span>"
+					</h4>
 				</div>
 				<form onSubmit={(e) => onSubmitHandler(e)}>
 					<div className="col-md-6 col-10 d-flex mx-auto my-4">
